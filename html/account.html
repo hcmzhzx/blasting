@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+    <meta name="format-detection" content="telephone=no">
+    <title>绑定账户</title>
+    <link rel="stylesheet" href="http://xhh.wasd1.cn/static/css/base.css">
+    <link rel="stylesheet" href="../css/icon.css">
+    <link rel="stylesheet" href="../css/index.css">
+</head>
+<body>
+<div id="account" class="flexv wrap">
+    <div class="flexitemv mainbox">
+        <form action="account.html" class="cardinfo" onsubmit="return false">
+            <div class="tips">请绑定持卡本人的银行卡</div>
+            <div class="block stepone">
+                <label class="flex centerv row select">
+                    <span class="flex title">银行/账户</span>
+                    <select name="bank_name" class="flexitem" data-rule="*" data-errmsg="请选择银行或账户类型">
+                        <option value="">请选择银行或账户类型</option>
+                        <option value="支付宝">支付宝</option>
+                        <option value="工商银行">工商银行</option>
+                        <option value="农业银行">农业银行</option>
+                        <option value="建设银行">建设银行</option>
+                        <option value="交通银行">交通银行</option>
+                        <option value="招商银行">招商银行</option>
+                    </select>
+                    <i class="flex center bls bls-yjt"></i>
+                </label>
+                <label class="flex centerv row">
+                    <span class="flex title">开户姓名</span>
+                    <input type="text" name="user_name" placeholder="请填写您的开户姓名/真实姓名" class="flexitem input normal" data-rule="*" data-errmsg="请填写您的开户姓名/真实姓名">
+                </label>
+                <label class="flex centerv row">
+                    <span class="flex title">卡号/账户</span>
+                    <input type="text" name="bank_sn" placeholder="请填写您的银行卡/账户" class="flexitem input normal" data-rule="*" data-errmsg="请填写您的银行卡/账户">
+                </label>
+            </div>
+            <a href="javascript:;" class="flex center submit nextstep">下一步</a>
+        </form>
+        <form action="" class="sendinfo hide" onsubmit="return false">
+            <div class="tips">系统已给本账号用户手机发送了短信验证，请输入验证码之后提交。</div>
+            <div class="block">
+                <label class="flex centerv row">
+                    <span class="flex title">卡号/账户</span>
+                    <input type="number" name="code" placeholder="短信验证码" class="flexitem input normal" maxlength="6" data-rule="/^\d{6}$/" data-errmsg="短信验证码错误">
+                    <a href="javascript:;" class="flex center getcode">获取验证码</a>
+                </label>
+            </div>
+            <a href="javascript:;" class="flex center submit saveit">提交绑定</a>
+        </form>
+    </div>
+</div>
+</body>
+<script src="//cdn.bootcss.com/zepto/1.1.6/zepto.min.js"></script>
+<script src="../js/functions.js"></script>
+<script src="../js/contact.js"></script>
+<script type="text/javascript">
+    /**
+     * 获取验证码
+     */
+    $('.getcode').click(function (){
+        if($(this).hasClass('disable')) return false;
+        var obj = $(this);
+        obj.addClass('disable').text('验证码发送中');
+
+        if(1 == 1){
+            smsTimer(obj,'重新获取',60,'disable');
+        }else{
+            obj.removeClass('disable').text('重新获取');
+        }
+    });
+    /**
+     * 提交绑定
+     */
+    var checker = new checkForm({
+        form: '.sendinfo',
+        btn: '.saveit',
+        error: function (ele,err){api.toast({msg:err,location:'middle'})},
+        complete: function (ele){
+            showProgress('请稍候');
+            var url = $('.cardinfo').attr('action'),post = $('.cardinfo').serializeArray();
+            post[post.length] = {name:'code',value:$('input[name=code]').val()};
+            $.post(url,post,function (ret){
+                showMsg(ret.info,ret.status);
+                if(ret.status == 1){
+                    setTimeout(function (){ ret.url ? window.location.href = ret.url : window.location.reload();},1000);
+                }
+            });
+        }
+    });
+    /**
+     * 下一步
+     */
+    $('.nextstep').click(function (){
+        if($(this).hasClass('fixed')){
+            $('.cardinfo').find('input,select').removeAttr('disabled').val('');
+            $(this).removeClass('fixed').text('下一步');
+            return;
+        }
+        var errmsg = checker.check($('.cardinfo').find('input,select'));
+        if(errmsg){
+            showMsg(errmsg);
+            return;
+        }
+
+        $('.nextstep').addClass('disable').text('验证码发送中');
+
+        $('.nextstep').removeClass('disable').text('下一步');
+        if(1 == 1){
+            $('.cardinfo').addClass('hide').next().removeClass('hide');
+            smsTimer($('.getcode'),'重新获取',60,'disable');
+        }
+
+    });
+</script>
+</html>

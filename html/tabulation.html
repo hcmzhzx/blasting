@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>图片列表</title>
+    <link rel="stylesheet" href="http://xhh.wasd1.cn/static/css/base.css">
+    <link rel="stylesheet" href="../css/icon.css">
+    <link rel="stylesheet" href="../css/index.css">
+</head>
+<body>
+<div id="tabulation" class="flexv wrap">
+    <div class="flex tex-t">
+        <a href="javascript:;" class="flex center current"><span class="flex center">国珍</span></a>
+        <a href="javascript:;" class="flex center"><span class="flex center">节日</span></a>
+        <a href="javascript:;" class="flex center"><span class="flex center">励志</span></a>
+        <a href="javascript:;" class="flex center"><span class="flex center">问候</span></a>
+        <a href="javascript:;" class="flex center"><span class="flex center">最热</span></a>
+        <a href="javascript:;" class="flex center"><span class="flex center">问候</span></a>
+        <a href="javascript:;" class="flex center"><span class="flex center">最热</span></a>
+    </div>
+    <div class="flexitemv mainbox">
+        <div class="fwrap listbox">
+            <a href="posters.html" class="flexv imgbox">
+                <div class="flex center img">
+                    <img src="../image/poster.jpg" class="fitimg">
+                </div>
+                <div class="flexv center tit">宝健空气净化器</div>
+            </a>
+            <a href="posters.html" class="flexv imgbox">
+                <div class="flex center img">
+                    <img src="../image/poster.jpg" class="fitimg">
+                </div>
+                <div class="flexv center tit">宝健空气净化器</div>
+            </a>
+            <a href="posters.html" class="flexv imgbox">
+                <div class="flex center img">
+                    <img src="../image/poster.jpg" class="fitimg">
+                </div>
+                <div class="flexv center tit">宝健空气净化器</div>
+            </a>
+            <a href="posters.html" class="flexv imgbox">
+                <div class="flex center img">
+                    <img src="../image/poster.jpg" class="fitimg">
+                </div>
+                <div class="flexv center tit">宝健空气净化器</div>
+            </a>
+            <a href="posters.html" class="flexv imgbox">
+                <div class="flex center img">
+                    <img src="../image/poster.jpg" class="fitimg">
+                </div>
+                <div class="flexv center tit">宝健空气净化器</div>
+            </a>
+            <a href="posters.html" class="flexv imgbox">
+                <div class="flex center img">
+                    <img src="../image/poster.jpg" class="fitimg">
+                </div>
+                <div class="flexv center tit">宝健空气净化器</div>
+            </a>
+            <a href="posters.html" class="flexv imgbox">
+                <div class="flex center img">
+                    <img src="../image/poster.jpg" class="fitimg">
+                </div>
+                <div class="flexv center tit">宝健空气净化器</div>
+            </a>
+            <a href="posters.html" class="flexv imgbox">
+                <div class="flex center img">
+                    <img src="../image/poster.jpg" class="fitimg">
+                </div>
+                <div class="flexv center tit">宝健空气净化器</div>
+            </a>
+            <a href="posters.html" class="flexv imgbox">
+                <div class="flex center img">
+                    <img src="../image/poster.jpg" class="fitimg">
+                </div>
+                <div class="flexv center tit">宝健空气净化器</div>
+            </a>
+            <a href="posters.html" class="flexv imgbox">
+                <div class="flex center img">
+                    <img src="../image/poster.jpg" class="fitimg">
+                </div>
+                <div class="flexv center tit">宝健空气净化器</div>
+            </a>
+            <a href="posters.html" class="flexv imgbox">
+                <div class="flex center img">
+                    <img src="../image/poster.jpg" class="fitimg">
+                </div>
+                <div class="flexv center tit">宝健空气净化器</div>
+            </a>
+            <a href="posters.html" class="flexv imgbox">
+                <div class="flex center img">
+                    <img src="../image/poster.jpg" class="fitimg">
+                </div>
+                <div class="flexv center tit">宝健空气净化器</div>
+            </a>
+        </div>
+    </div>
+</div>
+</body>
+<script src="https://cdn.bootcss.com/zepto/1.2.0/zepto.min.js"></script>
+<script src="../js/brand.js"></script>
+<script type="text/javascript">
+    //  头部点击切换
+    $(".tex-t>a").click(function(){
+        if($(this).hasClass("current")) return false;
+        $(this).addClass("current").siblings().removeClass("current");
+    });
+    // 分页
+    pages('.mainbox','.listbox');
+
+</script>
+</html>

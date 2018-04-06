@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+	<meta name="format-detection" content="telephone=no">
+	<title>基本信息</title>
+    <link rel="stylesheet" href="http://xhh.wasd1.cn/static/css/base.css">
+	<link rel="stylesheet" href="../css/icon.css">
+	<link rel="stylesheet" href="../css/index.css">
+</head>
+<body>
+<div id="basic" class="flexv wrap">
+	<div class="flexitemv user">
+		<div class="users">
+			<div class="item portrait">
+				<span class="flex centerv">头像</span>
+				<div class="flex centerv right">
+					<div class="flex center userimg">
+						<img src="../image/banner.jpg">
+					</div>
+					<i class="flex center bls bls-yjt"></i>
+				</div>
+				<input type="file" id="userimg" class="fileElem" accept="image/jpg,image/png,image/jpeg">
+			</div>
+			<div class="item name">
+				<span class="flex centerv">姓名</span>
+				<div class="flex centerv right">
+					<input type="text" class="flexi center userimg" placeholder="轩轩">
+					<i class="flex center bls bls-yjt"></i>
+				</div>
+			</div>
+			<div class="item phone">
+				<span class="flex centerv">手机号</span>
+				<div class="flex centerv right">
+					<input type="tel" class="flex center userimg" placeholder="138****4623" oninput="if(value.length>11)value=value.slice(0,11)">
+					<i class="flex center bls bls-yjt"></i>
+				</div>
+			</div>
+		</div>
+		<div class="users">
+			<div class="item brand">
+				<span class="flex centerv">我的品牌</span>
+				<div class="flex centerv right">
+					<input class="flex center userimg" type="text" readonly="readonly" placeholder="请选择" unselectable="on" onfocus="this.blur()">
+					<i class="flex center bls bls-yjt"></i>
+				</div>
+			</div>
+			<div class="item area">
+				<span class="flex centerv">从业地区</span>
+				<div class="flex centerv right">
+					<input id="sel_city" class="flex center userimg" type="text" readonly="readonly" placeholder="请选择" unselectable="on" onfocus="this.blur()">
+					<i class="flex center bls bls-yjt"></i>
+				</div>
+				
+			</div>
+		</div>
+		<div class="users">
+			<div class="item qrcode">
+				<span class="flex centerv">个人微信二维码</span>
+				<div class="flex centerv right">
+                    <img src="../image/upqrcode.jpg" class="flex center userimg">
+					<i class="flex center bls bls-yjt"></i>
+				</div>
+				<!--文件域-->
+				<input type="file" id="qrcodeimg" class="fileElem" accept="image/jpg,image/png,image/jpeg">
+			</div>
+		</div>
+		
+		<a href="javascript:;" class='clook'>查看如何获取二维码？</a>
+		<div class="button">
+			<a href="javascript:;" class="flex center">保存</a>
+		</div>
+	</div>
+	
+	<div class="flex center bottom">&copy;&ensp;2017&ensp;事业头条&ensp;版权所有</div>
+	<!--品牌-->
+	<div id="brand" class="flexv dialog_box">
+		<div class="flex center head">
+			<a href="javascript:;" class="bls bls-zjt"></a>
+			<h1 class="flexitem center" style="margin-left: -2rem;">选择品牌</h1>
+		</div>
+		<ul class="flexitemv mainbox company" style="padding-top: 20px"></ul>
+		<ul class="flexitemv lettrt">
+			<li class="flexitem center"><a href="#">#</a></li>
+			<li class="flexitem center"><a href="#A">A</a></li>
+			<li class="flexitem center"><a href="#B">B</a></li>
+			<li class="flexitem center"><a href="#C">C</a></li>
+			<li class="flexitem center"><a href="#D">D</a></li>
+			<li class="flexitem center"><a href="#E">E</a></li>
+			<li class="flexitem center"><a href="#F">F</a></li>
+			<li class="flexitem center"><a href="#G">G</a></li>
+			<li class="flexitem center"><a href="#H">H</a></li>
+			<li class="flexitem center"><a href="#I">I</a></li>
+			<li class="flexitem center"><a href="#J">J</a></li>
+			<li class="flexitem center"><a href="#K">K</a></li>
+			<li class="flexitem center"><a href="#L">L</a></li>
+			<li class="flexitem center"><a href="#M">M</a></li>
+			<li class="flexitem center"><a href="#N">N</a></li>
+			<li class="flexitem center"><a href="#O">O</a></li>
+			<li class="flexitem center"><a href="#P">P</a></li>
+			<li class="flexitem center"><a href="#Q">Q</a></li>
+			<li class="flexitem center"><a href="#R">R</a></li>
+			<li class="flexitem center"><a href="#S">S</a></li>
+			<li class="flexitem center"><a href="#T">T</a></li>
+			<li class="flexitem center"><a href="#U">U</a></li>
+			<li class="flexitem center"><a href="#V">V</a></li>
+			<li class="flexitem center"><a href="#W">W</a></li>
+			<li class="flexitem center"><a href="#X">X</a></li>
+			<li class="flexitem center"><a href="#Y">Y</a></li>
+			<li class="flexitem center"><a href="#Z">Z</a></li>
+			<li class="flexitem center"><a href="javascript:;">☆</a></li>
+		</ul>
+	</div>
+	<!--提示-->
+	<form class="flex center alert">
+		<div class="mask"></div>
+		<div class='content'>
+			<i class="flex center bls bls-cuo cuo"></i>
+			<h3 class="flex center title">您的信息不完整</h3>
+			<p class="flex center tis">立刻完善资料，让客户找到您</p>
+			<div class="flex center input">
+				<span class="flex centerv">姓名</span>
+				<input type="text" class="flexitem" placeholder="轩轩">
+			</div>
+			<div class="flex center input">
+				<span class="flex centerv">手机号</span>
+				<input type="text" class="flexitem" placeholder="138****3561">
+			</div>
+			<div class="flex centerv input brands">
+				<span class="flex centerv">品牌</span>
+				<input type="text" readonly="readonly" class="flexitem cenk" placeholder="安发国际">
+				<i class="flex smtxt"></i>
+				<i class="flex center bls bls-xia brand"></i>
+			</div>
+			<a href="javascript:;" class="flex center button">保存修改</a>
+		</div>
+	</form>
+</div>
+</body>
+<script src="https://cdn.bootcss.com/jquery/2.2.0/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/hammer.js/2.0.4/hammer.min.js"></script>
+<script src="https://cdn.bootcss.com/iScroll/5.1.3/iscroll-zoom.min.js"></script>
+<script src="../js/jquery.cliper.js"></script>
+<script src="../js/functions.js"></script>
+<script src="../js/city.js"></script>
+<script src="../js/picker.min.js"></script>
+<script src="../js/city-js.js"></script>
+<script src="../js/brand.js"></script>
+<script type="text/javascript">
+    //  品牌
+/*    var brands = [
+        {id: 1, title: '安利', pinyin: 'anli'},
+        {id: 1, title: '安惠', pinyin: 'anhui'},
+        {id: 1, title: '嘉康利', pinyin: 'jiakangli'},
+        {id: 1, title: '完美', pinyin: 'wanmei'}
+    ];
+    var char = '', charlist = [];
+    var charTpl = [], listTpl = [];
+    for (var k = 0; k < brands.length; k++) {
+        var ch = brands[k].pinyin.substring(0, 1);
+        if (char == ch) {
+            charlist[char].push(brands[k]);
+            listTpl.push('<div>' + brands[k].title + '</div>');
+        } else {
+            if (char != '') listTpl.push('</li>');
+            char = ch;
+            charlist[char] = [brands[k]];
+            listTpl.push('<li id="' + char.toUpperCase() + '">');
+            listTpl.push('<p>' + char.toUpperCase() + '</p>');
+            listTpl.push('<div>' + brands[k].title + '</div>');
+            charTpl.push('<li><a href="#' + char + '">' + char.toUpperCase() + '</a></li>');
+        }
+    }
+    listTpl.push('</li>');
+    //	console.log(listTpl.join(''));
+    //	console.log(charTpl.join(''))
+    $(".company").append(listTpl.join(''));*/
+    
+//   选择品牌
+	$(".brand").click(function () {
+		$("#brand").addClass('show');
+	   $("#brand ul li div").click(function () {
+           $(".brand").find('.userimg').val($(this).text());
+           $("#brand").removeClass('show');
+       });
+		$('#brand .bls').click(function () {
+			$("#brand").removeClass('show');
+		})
+    });
+
+    //   头像上传
+    $(".portrait").click(function () {
+        showCliper('#headclip','#headbox','裁剪头像',function (id,cid,ok){
+            var hammer = '',currentIndex = 0,name = '',box = 200,scale = 0.5;
+            $(cid).cliper({
+                width : box,
+                height : box,
+                file: '#userimg',
+                ok : ok,
+                strictSize : scale,
+                pickError : function (){
+                    showMsg('图片格式错误！');
+                },
+                loadStart: function (file) {
+                    showProgress('照片读取中');
+                    name = file.name;
+                },
+                loadError : function (err){
+                    showMsg('图片读取失败');
+                },
+                loadComplete: function () {
+                    hideProgress();
+                    $(id).css({'z-index':99,'opacity':1});
+                },
+                clipFinish: function (data) {
+                    $(".portrait img").attr("src",data);
+                    $("#headclip").remove();
+                }
+            });
+        });
+    })
+
+
+    //  上传二维码
+    $(".qrcode").click(function(){
+        showCliper('#headclip', '#headbox', '裁剪头像', function (id, cid, ok) {
+            var hammer = '', currentIndex = 0, name = '', box = 200, scale = 0.5;
+            $(cid).cliper({
+                width: box,
+                height: box,
+                file: '#qrcodeimg',
+                ok: ok,
+                strictSize: scale,
+                pickError: function () {
+                    showMsg('图片格式错误！');
+                },
+                loadStart: function (file) {
+                    showProgress('照片读取中');
+                    name = file.name;
+                },
+                loadError: function (err) {
+                    showMsg('图片读取失败');
+                },
+                loadComplete: function () {
+                    hideProgress();
+                    $(id).css({'z-index': 99, 'opacity': 1});
+                },
+                clipFinish: function (data) {
+                    $(".qrcode img").attr("src", data);
+                    $("#headclip").remove();
+                }
+            });
+        });
+    })
+
+
+    /**
+     * 打开裁剪框
+     * @param id 裁剪框dom id
+     * @param cid 裁剪区域dom id
+     * @param callback 回调函数
+     */
+    function showCliper (id,cid,title,callback){
+        var template = '<div id="' + id.replace('#','') + '" class="cliper">' +
+            '<div class="header">' +
+            '<a href="javascript:;" class="side cancel">取消</a>' +
+            '<div class="title">' + title + '</div>' +
+            '<a href="javascript:;" class="side confirm">确定</a>' +
+            '</div>' +
+            '<div class="cliperbox" id="' + cid.replace('#','') + '"></div>' +
+            '</div>';
+        $(template).appendTo($('body'));
+        if(typeof callback == 'function') callback(id,cid,id +' .confirm');
+        $(id).find('.cancel').click(function (){
+            $(id).css('opacity',0);
+            setTimeout(function (){$(id).css('z-index',-1);},500);
+        });
+    }
+
+</script>
+</html>

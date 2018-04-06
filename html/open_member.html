@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+	<meta name="format-detection" content="telephone=no">
+	<title>开通谁查看我功能</title>
+	<link rel="stylesheet" href="http://xhh.wasd1.cn/static/css/base.css">
+	<link rel="stylesheet" href="../css/icon.css">
+	<link rel="stylesheet" href="../css/index.css">
+</head>
+<body>
+<div id="open" class="flexv wrap">
+	<div class="flexitemv mainbox">
+		<div class="state">状态：<span>未开通</span></div>
+		<div class="bjimg">
+			<img src="../image/dredge1.jpg" class="fitimg">
+			<img src="../image/dredge2.jpg" class="fitimg">
+			<img src="../image/dredge3.jpg" class="fitimg">
+            <div class="flex center optionbox">
+                <div class="flex center option">
+                    <div class="flexv discount">
+                        <div class="between list">
+                            <div class="flexv">
+                                <div class="flex centerv price">
+                                    <span class="flex">1年</span>
+                                    <em>&yen;99</em>
+                                </div>
+                                <div class="cost">
+                                    <i class="original">原价 199元</i>
+                                    <span>立省100元</span>
+                                </div>
+                            </div>
+                            <div class="flexitem endh">
+                                <a href="javascript:;" class="flex center discounts">优惠抢购</a>
+                            </div>
+                            <div class="flex center cornu">优惠</div>
+                        </div>
+                        <div class="between list">
+                            <div class="flex centerv price">
+                                <span class="flex">1个月</span>
+                                <em>&yen;39.9</em>
+                            </div>
+                            <div class="flexitem endh">
+                                <a href="javascript:;" class="flex center discounts">购买</a>
+                            </div>
+                        </div>
+						<div class="between list">
+							<div class="flex centerv price">
+								<span class="flex">2年</span>
+								<em>&yen;158</em>
+							</div>
+							<div class="flexitem endh">
+								<a href="javascript:;" class="flex center discounts">购买</a>
+							</div>
+						</div>
+                    </div>
+                </div>
+            </div>
+		</div>
+	</div>
+	
+	<div class="flex center once">
+		<a href="javascript:;" class="flex center">立即开通</a>
+	</div>
+	<!--弹框-->
+	<div class="alert buy-hint">
+		<div class="mask"></div>
+		<div class='content'>
+			<h3 class="flex center">购买成功</h3>
+			<div class="img">
+				<img src="../image/dredge_bj.png" class="fitimg">
+			</div>
+			<div class="flex center indate">
+				<div>有效期至：</div>
+				<span>2017-09-15 10:42:20</span>
+			</div>
+			<div class="button">
+				<a href="javascript:;" class="flex center">去看看谁查看了我的头条</a>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+<script type="text/javascript">
+	// 当前时间
+    Date.prototype.format = function (format) {
+        var args = {
+            "M+": this.getMonth() + 1,
+            "d+": this.getDate(),
+            "h+": this.getHours(),
+            "m+": this.getMinutes(),
+            "s+": this.getSeconds()
+            //"q+": Math.floor((this.getMonth() + 3) / 3)
+        };
+        if (/(y+)/.test(format)){
+            format = format.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
+        };
+        for (var i in args) {
+            var n = args[i];
+            if (new RegExp("(" + i + ")").test(format)){
+                format = format.replace(RegExp.$1, RegExp.$1.length == 1 ? n : ("00" + n).substr(("" + n).length));
+            };
+        };
+        return format;
+    };
+
+    // 购买会员
+    $("a.discounts").click(function () {
+        $(".buy-hint").show().find(".content").addClass('trans');
+        $('.indate span').text(new Date().format("yyyy-MM-dd hh:mm:ss"));
+    });
+    $(".mask").click(function () {
+        $(".buy-hint").hide();
+    });
+    // 点击回到底部
+    window.onload = function () {
+        var h = $(".bjimg").height() - $(document).height() + $(".state").innerHeight(), opbox = $('.optionbox').height(), boxh;
+        $(".once a").click(function () {
+            $(".mainbox").animate({scrollTop: h}, 200);
+        });
+        // 手动滚动显/隐开通按钮
+        $('.mainbox').scroll(function () {
+            boxh = $(".mainbox").scrollTop();
+            if (boxh >= h - opbox) {
+                $(".once").hide();
+            } else {
+                $(".once").show();
+            }
+        });
+    }
+</script>
+</html>

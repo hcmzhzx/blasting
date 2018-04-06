@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+	<meta name="format-detection" content="telephone=no">
+	<title>个人中心</title>
+	<link rel="stylesheet" href="http://xhh.wasd1.cn/static/css/base.css">
+	<link rel="stylesheet" href="../css/icon.css">
+	<link rel="stylesheet" href="../css/index.css">
+</head>
+<body>
+<div id="focus" class="flexv wrap">
+	<div class="flexitemv mainbox datum">
+		<div class="flexv sub">
+			<div class="flexitem centerv userbox">
+				<div class="flex userimg">
+					<img src="../image/banner.jpg" class="fitimg">
+				</div>
+				<div class="flexitemv info">
+					<div class="flex name">
+						<h2 class="flexv center">轩轩>的房噶的发嘎嘎是根深蒂固</h2>
+					</div>
+                    <p class="vip">正式会员</p>
+					<p class="flex lock">有效期至：<span>2018-01-29</span></p>
+				</div>
+                <a href="open_member.html" class="flex center renew">续费会员</a>
+			</div>
+
+			<div class="flexv centerv around front">
+				<a href="headlines.html" class="flexitemv center myfront">
+					<em class="flex">0</em>
+					<div class="flex">
+						<span class="flex center">我的头条</span>
+						<i class="flex center bls bls-yjt"></i>
+					</div>
+				</a>
+				<div class="flex line"></div>
+				<a href="javascript:;" class="flexitemv center myfront">
+					<em class="flex">0</em>
+					<div class="flex">
+						<span class="flex center">谁查看我的头条 </span>
+						<i class="flex center bls bls-yjt"></i>
+					</div>
+				</a>
+			</div>
+		</div>
+
+        <div class="flipbox">
+            <div class="bor">
+                <div class="flex centerv flip">
+                    <i class="flex center bls bls-horn"></i>
+                    <div class="flex text"> 恭喜"<span class="flexv name">小胡1</span>"成功开通会员进行获客展示</div>
+                </div>
+                <div class="flex centerv flip">
+                    <i class="flex center bls bls-horn"></i>
+                    <div class="flex text"> 恭喜"<span class="flexv name">小胡2</span>"成功开通会员进行获客展示</div>
+                </div>
+                <div class="flex centerv flip">
+                    <i class="flex center bls bls-horn"></i>
+                    <div class="flex text"> 恭喜"<span class="flexv name">小胡3</span>"成功开通会员进行获客展示</div>
+                </div>
+            </div>
+        </div>
+
+		<div class="flexv func">
+			<a href="basic.html" class="flexitem centerv card">
+				<i class="flex center bls bls-mp" style="background:#fbc45d;"></i>
+				<span class="flex center text">设置名片</span>
+			</a>
+			<a href="rules.html" class="flexitem centerv hy">
+				<i class="flex center bls bls-jhy" style="background:#67cef9;"></i>
+				<span class="flex center text">邀请好友<span>（可得30%佣金）</span></span>
+			</a>
+			<a href="generalize.html" class="flexitem centerv tg">
+				<i class="flex center bls bls-generalize" style="background:#35f921;"></i>
+				<span class="flex center text">推广中心</span>
+			</a>
+            <a href="generalize.html" class="flexitem centerv tg">
+                <i class="flex center bls bls-consult" style="background:#ffc0cb"></i>
+                <span class="flex center text">留言管理</span>
+            </a>
+			<!--<a hropen_member.htmlhtml" class="flexitem centerv kt">
+				<i class="flex center bls bls-ck" style="background:#f68f66; "></i>
+				<span class="flex center text">开通谁查看我的功能</span>
+			</a>-->
+		</div>
+
+        <div class="picture">
+            <div class="between title">
+                <div class="tex">展示美图</div>
+                <a href="tabulation.html" class="flex center more">更多 <i class="flex center bls bls-yjt"></i></a>
+            </div>
+            <div class="flex imgbox">
+                <a href="javascript:;"><img src="../image/poster.jpg" class="fitimg"></a>
+                <a href="javascript:;"><img src="../image/poster.jpg" class="fitimg"></a>
+                <a href="javascript:;"><img src="../image/poster.jpg" class="fitimg"></a>
+                <a href="javascript:;"><img src="../image/poster.jpg" class="fitimg"></a>
+            </div>
+        </div>
+	</div>
+	<!--底部-->
+	<div class="flex tabbars">
+		<div class="flexitem center middle">
+			<a href="javascript:;" class="flexv center user">
+				<span class="flex userimg">
+					<img class="fitimg" src="../image/banner.jpg"/>
+				</span>
+				<em class="flex center">首页</em>
+			</a>
+		</div>
+		<a href="javascript:;" class="flexv center item">
+			<i class="flex center bls bls-fkjl fk"></i>
+			<em class="flex center">访客记录</em>
+		</a>
+		<a href="open_member.html" class="flexv center item">
+			<i class="flex center bls bls-zfkt"></i>
+			<em class="flex center">支付开通</em>
+		</a>
+		<a href="javascript:;" id="data" class="flexv center item">
+			<i class="flex center bls bls-grzx"></i>
+			<em class="flex center">个人中心</em>
+		</a>
+	</div>
+</div>
+</body>
+<script src="https://cdn.bootcss.com/jquery/3.0.0/jquery.min.js"></script>
+<script src="../js/brand.js"></script>
+<script type="text/javascript">
+    // 插入完善信息页
+    InfoBrand("#focus",true,true);
+
+    //滚动广告
+    setInterval(function roll() {
+        var objh = $('.flip').height();
+        $(".flipbox .bor").append($(".flipbox .bor .flip").first().height(0).animate({"height":objh+"px"},500));
+    },2000);
+</script>
+</html>

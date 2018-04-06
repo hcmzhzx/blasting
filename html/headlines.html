@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+	<meta name="format-detection" content="telephone=no">
+	<title>我的头条</title>
+    <link rel="stylesheet" href="http://xhh.wasd1.cn/static/css/base.css">
+	<link rel="stylesheet" href="../css/icon.css">
+	<link rel="stylesheet" href="../css/index.css">
+</head>
+<body>
+<div id="headlines" class="flexv wrap">
+	<div class="flexitemv mainbox">
+		<div class="listbox">
+			<a href="javascript:;" class="flex">
+				<div class="flexitem lists">
+					<div class="img">
+						<img class="fitimg" src="../image/banner.jpg"/>
+					</div>
+					<div class="flexitemv cont">
+						<h2 class="flexitemv">描绘人类将如何殖民火星</h2>
+						<div class="base">
+							<span><em>7862</em>阅读</span>
+							<span><em>7862</em>分享</span>
+							<span><em>2</em>小时前</span>
+						</div>
+					</div>
+				</div>
+			</a>
+			<a href="javascript:;" class="flex">
+				<div class="flexitem lists">
+					<div class="img">
+						<img class="fitimg" src="../image/banner.jpg"/>
+					</div>
+					<div class="flexitemv cont">
+						<h2 class="flexitemv">描绘人类将如将如将如将如将如将如何殖民火星</h2>
+						<div class="base">
+							<span><em>7862</em>阅读</span>
+							<span><em>7862</em>分享</span>
+							<span><em>2</em>小时前</span>
+						</div>
+					</div>
+				</div>
+			</a>
+			<a href="javascript:;" class="flex">
+				<div class="flexitem lists">
+					<div class="img">
+						<img class="fitimg" src="../image/banner.jpg"/>
+					</div>
+					<div class="flexitemv cont">
+						<h2 class="flexitemv">描绘人类将如何殖类将如何殖类将如何殖类将如何将如将如将如将如殖类将如何殖类将如何殖类将如何殖类将如何殖民火星</h2>
+						<div class="base">
+							<span><em>7862</em>阅读</span>
+							<span><em>7862</em>分享</span>
+							<span><em>2</em>小时前</span>
+						</div>
+					</div>
+				</div>
+			</a>
+        </div>
+		<p class="flex center more">没有更多了~</p>
+	</div>
+	<div class="flex tabbars">
+		<div class="flexitem center middle">
+			<a href="index.html" class="flexv center user">
+				<span class="flex userimg">
+					<img class="fitimg" src="../image/banner.jpg"/>
+				</span>
+				<em class="flex center">首页</em>
+			</a>
+		</div>
+		<a href="javascript:;" class="flexv center item">
+			<i class="flex center bls bls-dh"></i>
+			<em class="flex center">拨手机</em>
+		</a>
+		<a href="javascript:;" class="flexv center item wx">
+			<i class="flex center bls bls-weixin"></i>
+			<em class="flex center">加微信</em>
+		</a>
+		<a href="javascript:;" id="data" class="flexv center item">
+			<i class="flex center bls bls-zx-ing"></i>
+			<em class="flex center">在线咨询</em>
+		</a>
+	</div>
+	<!--加微信提示-->
+	<div id="wechat" class="flex center alert hint">
+        <div class="mask"></div>
+		<div class="content wechat">
+			<h3 class="flex center">更多免费<span>安发国际</span>资讯</h3>
+			<div class="qrcode">
+				<img src="http://yun.zhzxj.cn/default/user_qrcode_private.jpg" class="fitimg">
+			</div>
+			<p class="flex center">长按识别二维码</p>
+		</div>
+	</div>
+</div>
+</body>
+<script src="https://cdn.bootcss.com/zepto/1.2.0/zepto.min.js"></script>
+<script src="../js/brand.js"></script>
+<script type="text/javascript">
+    // 插入完善信息页
+    InfoBrand("#headlines",true,true);
+
+    //	加微信
+    $(".wx").click(function () {
+        $(".hint").show();
+        $(".hint").find(".content").addClass('trans');
+    });
+    $(".mask").click(function(){
+        $(".hint").hide();
+    });
+</script>
+</html>
