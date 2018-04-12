@@ -23,8 +23,8 @@
 
     $.fn.cliper = function(option) {
         var defaultOption = {
-            width: 300,
-            height: 300,
+            width: '',
+            height: '',
             file: "",
             view: "",
             ok: "",

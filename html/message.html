@@ -11,9 +11,13 @@
 </head>
 <body>
 <div id="mesag" class="flexv wrap">
+    <div class="flex center title">
+        <span class="flex center read elect">家庭保障留言</span>
+        <span class="flex center share">用户咨询留言</span>
+    </div>
 	<div class="flexitemv mainbox">
-		<div class="flexv centerv lists">
-			<div class="flex top">
+		<!--<div class="flexv centerv lists">
+			<div class="around top">
 				<div class="headimg">
 					<img src="../image/banner.jpg" class="fitimg">
 				</div>
@@ -24,86 +28,24 @@
 				<div class="flex endh">2017-08-23 10:20</div>
 			</div>
 			<a href="javascript:;" class="flex center">点击查看留言详情</a>
-		</div>
-		<div class="flexv centerv lists">
-			<div class="flex top">
-				<div class="headimg">
-					<img src="../image/banner.jpg" class="fitimg">
-				</div>
-				<div class="flexitemv info">
-					<p class="flexv name">轩*</p>
-					<p class="flex tel">138*****</p>
-				</div>
-				<div class="flex endh">2017-08-23 10:20</div>
-			</div>
-			<a href="javascript:;" class="flex center">点击查看留言详情</a>
-		</div>
+		</div>-->
+
+        <p class="flex center empty">还没有收到家庭保障留言哦~</p>
+
+        <!--<div class="flexv center ordinary">
+            <h2 class="tit">您还未开通正式会员</h2>
+            <p class="s-tit">开通后才可以体验"家庭保障留言"功能</p>
+            <a href="open_member.html" class="flex center btn">去开通</a>
+        </div>-->
+
 	</div>
-	<!--提示-->
-	<form class="flex center alert">
-		<div class="mask"></div>
-		<div class='content'>
-			<i class="flex center bls bls-cuo cuo"></i>
-			<h3 class="flex center title">您的信息不完整</h3>
-			<p class="flex center tis">立刻完善资料，让客户找到您</p>
-			<div class="flex center input">
-				<span class="flex centerv">姓名</span>
-				<input type="text" class="flexitem" placeholder="轩轩">
-			</div>
-			<div class="flex center input">
-				<span class="flex centerv">手机号</span>
-				<input type="text" class="flexitem" placeholder="138****3561">
-			</div>
-			<div class="flex centerv input brands">
-				<span class="flex centerv">品牌</span>
-				<input type="text" readonly="readonly" class="flexitem cenk" placeholder="安发国际">
-				<i class="flex smtxt"></i>
-				<i class="flex center bls bls-xia brand"></i>
-			</div>
-			<a href="javascript:;" class="flex center button">保存修改</a>
-		</div>
-	</form>
-	<!--品牌-->
-	<div id="brand" class="flexv dialog_box">
-		<div class="flex center head">
-			<a href="javascript:;" class="bls bls-zjt"></a>
-			<h1 class="flexitem center" style="margin-left: -2rem;">选择品牌</h1>
-		</div>
-		<ul class="flexitemv mainbox company" style="padding-top: 20px"></ul>
-		<ul class="flexitemv lettrt">
-			<li class="flexitem center"><a href="#">#</a></li>
-			<li class="flexitem center"><a href="#A">A</a></li>
-			<li class="flexitem center"><a href="#B">B</a></li>
-			<li class="flexitem center"><a href="#C">C</a></li>
-			<li class="flexitem center"><a href="#D">D</a></li>
-			<li class="flexitem center"><a href="#E">E</a></li>
-			<li class="flexitem center"><a href="#F">F</a></li>
-			<li class="flexitem center"><a href="#G">G</a></li>
-			<li class="flexitem center"><a href="#H">H</a></li>
-			<li class="flexitem center"><a href="#I">I</a></li>
-			<li class="flexitem center"><a href="#J">J</a></li>
-			<li class="flexitem center"><a href="#K">K</a></li>
-			<li class="flexitem center"><a href="#L">L</a></li>
-			<li class="flexitem center"><a href="#M">M</a></li>
-			<li class="flexitem center"><a href="#N">N</a></li>
-			<li class="flexitem center"><a href="#O">O</a></li>
-			<li class="flexitem center"><a href="#P">P</a></li>
-			<li class="flexitem center"><a href="#Q">Q</a></li>
-			<li class="flexitem center"><a href="#R">R</a></li>
-			<li class="flexitem center"><a href="#S">S</a></li>
-			<li class="flexitem center"><a href="#T">T</a></li>
-			<li class="flexitem center"><a href="#U">U</a></li>
-			<li class="flexitem center"><a href="#V">V</a></li>
-			<li class="flexitem center"><a href="#W">W</a></li>
-			<li class="flexitem center"><a href="#X">X</a></li>
-			<li class="flexitem center"><a href="#Y">Y</a></li>
-			<li class="flexitem center"><a href="#Z">Z</a></li>
-			<li class="flexitem center"><a href="javascript:;">☆</a></li>
-		</ul>
-	</div>
-	
 </div>
 </body>
 <script src="https://cdn.bootcss.com/zepto/1.2.0/zepto.min.js"></script>
 <script src="../js/brand.js"></script>
+<script type="text/javascript">
+
+    // 插入完善信息
+    InfoBrand('#mesag',true,true,'.brands','.cenk');
+</script>
 </html>

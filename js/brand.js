@@ -1,9 +1,11 @@
 /**插入信息填写及品牌
  * @param id [插入位置id]
- * @param In [是否插入表单/布尔值]
+ * @param Info [是否插入表单/布尔值]
  * @param bra [是否插入品牌/布尔值]
+ * @param btn [触发按钮]
+ * @param val [文字填写位置]
  */
-function InfoBrand(id,Info,bra) {
+function InfoBrand(id,Info,bra,btn,val) {
     if(Info){
         var info = '<form id="perfect" class="alert">' +
             '<div class="mask"></div> ' +
@@ -33,7 +35,7 @@ function InfoBrand(id,Info,bra) {
     }
 
     if(bra){
-        var brands = '<div id="brand" class="flexv dialog_box">' +
+        var brands = '<div id="brand-menu" class="flexv dialog_box">' +
             '<div class="flex center brand-head">' +
             '<a href="javascript:;" class="bls bls-zjt"></a>' +
             '<h1 class="flexitem center" style="margin-left:-2rem;">选择品牌</h1>' +
@@ -103,18 +105,18 @@ function InfoBrand(id,Info,bra) {
     //console.log(charTpl.join(''))
 
     //   选择
-    $(".brands").click(function () {
-        $("#brand").addClass('show');
-        $("#brand ul li div").click(function () {
-            $(".cenk").val($(this).text());
-            $("#brand").removeClass('show');
+    $(btn).click(function () {
+        $("#brand-menu").addClass('show');
+        $("#brand-menu ul li div").click(function () {
+            $(val).val($(this).text());
+            $("#brand-menu").removeClass('show');
         });
-        $('#brand .bls-zjt').click(function () {
-            $("#brand").removeClass('show');
+        $('#brand-menu .bls-zjt').click(function () {
+            $("#brand-menu").removeClass('show');
         })
     });
     //	关闭
-    $(".cuo").click(function(){
+    $('.cuo').click(function(){
         $(".alert").hide();
     });
 }

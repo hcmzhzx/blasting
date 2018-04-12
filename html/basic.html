@@ -42,7 +42,7 @@
 			<div class="item brand">
 				<span class="flex centerv">我的品牌</span>
 				<div class="flex centerv right">
-					<input class="flex center userimg" type="text" readonly="readonly" placeholder="请选择" unselectable="on" onfocus="this.blur()">
+					<input id="brand" class="flex center userimg" type="text" readonly="readonly" placeholder="请选择" unselectable="on" onfocus="this.blur()">
 					<i class="flex center bls bls-yjt"></i>
 				</div>
 			</div>
@@ -72,70 +72,9 @@
 			<a href="javascript:;" class="flex center">保存</a>
 		</div>
 	</div>
-	
+
 	<div class="flex center bottom">&copy;&ensp;2017&ensp;事业头条&ensp;版权所有</div>
-	<!--品牌-->
-	<div id="brand" class="flexv dialog_box">
-		<div class="flex center head">
-			<a href="javascript:;" class="bls bls-zjt"></a>
-			<h1 class="flexitem center" style="margin-left: -2rem;">选择品牌</h1>
-		</div>
-		<ul class="flexitemv mainbox company" style="padding-top: 20px"></ul>
-		<ul class="flexitemv lettrt">
-			<li class="flexitem center"><a href="#">#</a></li>
-			<li class="flexitem center"><a href="#A">A</a></li>
-			<li class="flexitem center"><a href="#B">B</a></li>
-			<li class="flexitem center"><a href="#C">C</a></li>
-			<li class="flexitem center"><a href="#D">D</a></li>
-			<li class="flexitem center"><a href="#E">E</a></li>
-			<li class="flexitem center"><a href="#F">F</a></li>
-			<li class="flexitem center"><a href="#G">G</a></li>
-			<li class="flexitem center"><a href="#H">H</a></li>
-			<li class="flexitem center"><a href="#I">I</a></li>
-			<li class="flexitem center"><a href="#J">J</a></li>
-			<li class="flexitem center"><a href="#K">K</a></li>
-			<li class="flexitem center"><a href="#L">L</a></li>
-			<li class="flexitem center"><a href="#M">M</a></li>
-			<li class="flexitem center"><a href="#N">N</a></li>
-			<li class="flexitem center"><a href="#O">O</a></li>
-			<li class="flexitem center"><a href="#P">P</a></li>
-			<li class="flexitem center"><a href="#Q">Q</a></li>
-			<li class="flexitem center"><a href="#R">R</a></li>
-			<li class="flexitem center"><a href="#S">S</a></li>
-			<li class="flexitem center"><a href="#T">T</a></li>
-			<li class="flexitem center"><a href="#U">U</a></li>
-			<li class="flexitem center"><a href="#V">V</a></li>
-			<li class="flexitem center"><a href="#W">W</a></li>
-			<li class="flexitem center"><a href="#X">X</a></li>
-			<li class="flexitem center"><a href="#Y">Y</a></li>
-			<li class="flexitem center"><a href="#Z">Z</a></li>
-			<li class="flexitem center"><a href="javascript:;">☆</a></li>
-		</ul>
-	</div>
-	<!--提示-->
-	<form class="flex center alert">
-		<div class="mask"></div>
-		<div class='content'>
-			<i class="flex center bls bls-cuo cuo"></i>
-			<h3 class="flex center title">您的信息不完整</h3>
-			<p class="flex center tis">立刻完善资料，让客户找到您</p>
-			<div class="flex center input">
-				<span class="flex centerv">姓名</span>
-				<input type="text" class="flexitem" placeholder="轩轩">
-			</div>
-			<div class="flex center input">
-				<span class="flex centerv">手机号</span>
-				<input type="text" class="flexitem" placeholder="138****3561">
-			</div>
-			<div class="flex centerv input brands">
-				<span class="flex centerv">品牌</span>
-				<input type="text" readonly="readonly" class="flexitem cenk" placeholder="安发国际">
-				<i class="flex smtxt"></i>
-				<i class="flex center bls bls-xia brand"></i>
-			</div>
-			<a href="javascript:;" class="flex center button">保存修改</a>
-		</div>
-	</form>
+
 </div>
 </body>
 <script src="https://cdn.bootcss.com/jquery/2.2.0/jquery.min.js"></script>
@@ -148,51 +87,13 @@
 <script src="../js/city-js.js"></script>
 <script src="../js/brand.js"></script>
 <script type="text/javascript">
-    //  品牌
-/*    var brands = [
-        {id: 1, title: '安利', pinyin: 'anli'},
-        {id: 1, title: '安惠', pinyin: 'anhui'},
-        {id: 1, title: '嘉康利', pinyin: 'jiakangli'},
-        {id: 1, title: '完美', pinyin: 'wanmei'}
-    ];
-    var char = '', charlist = [];
-    var charTpl = [], listTpl = [];
-    for (var k = 0; k < brands.length; k++) {
-        var ch = brands[k].pinyin.substring(0, 1);
-        if (char == ch) {
-            charlist[char].push(brands[k]);
-            listTpl.push('<div>' + brands[k].title + '</div>');
-        } else {
-            if (char != '') listTpl.push('</li>');
-            char = ch;
-            charlist[char] = [brands[k]];
-            listTpl.push('<li id="' + char.toUpperCase() + '">');
-            listTpl.push('<p>' + char.toUpperCase() + '</p>');
-            listTpl.push('<div>' + brands[k].title + '</div>');
-            charTpl.push('<li><a href="#' + char + '">' + char.toUpperCase() + '</a></li>');
-        }
-    }
-    listTpl.push('</li>');
-    //	console.log(listTpl.join(''));
-    //	console.log(charTpl.join(''))
-    $(".company").append(listTpl.join(''));*/
-    
-//   选择品牌
-	$(".brand").click(function () {
-		$("#brand").addClass('show');
-	   $("#brand ul li div").click(function () {
-           $(".brand").find('.userimg').val($(this).text());
-           $("#brand").removeClass('show');
-       });
-		$('#brand .bls').click(function () {
-			$("#brand").removeClass('show');
-		})
-    });
+	// 插入品牌
+    InfoBrand('#basic',false,true,'#brand','.brand');
 
     //   头像上传
     $(".portrait").click(function () {
         showCliper('#headclip','#headbox','裁剪头像',function (id,cid,ok){
-            var hammer = '',currentIndex = 0,name = '',box = 200,scale = 0.5;
+            var hammer = '',currentIndex = 0,name = '',box = 200,scale = 10;
             $(cid).cliper({
                 width : box,
                 height : box,
@@ -220,7 +121,6 @@
             });
         });
     })
-
 
     //  上传二维码
     $(".qrcode").click(function(){
