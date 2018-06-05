@@ -17,7 +17,7 @@
             <p class="flex center">图片已生成，长安保存后即可分享到朋友圈</p>
             <div class="flex poster">
                 <i class="flex center bls bls-zjt_"></i>
-                <img class="img" src="../image/list.jpg">
+                <img class="img" src="../image/ymz.jpg">
                 <i class="flex center bls bls-zjt_"></i>
             </div>
             <button class="flex center share-btn" type="button">去分享</button>
@@ -89,34 +89,26 @@
     var img =  document.querySelector(".img"),
         user = document.querySelector(".user"),
         qrcode = document.querySelector(".qrcode"),
-        src = "../image/ymz.jpg",
         brand = "安然纳米",
         name = '小胡',
         phone = 15811111111;
-
-    poster(src,brand,name,phone,qrcode);
-
 
     //修改个人信息
     $(".edit>span").click(function () {
         $(".alert").show();
     });
-
     //左
     $(".poster>i").first().click(function () {
         console.log($(this));
     });
-
     //右
     $(".poster>i").last().click(function () {
         console.log($(this));
     });
-
     //换一批
     $(".change").click(function () {
         console.log($(this));
     });
-
     //分享弹窗
     $(".share-btn").click(function () {
         $(".win").show();
@@ -125,7 +117,6 @@
     $(".know-btn").click(function () {
         $(".win").hide();
     });
-
 
     function poster(src,brand,name,phone) {
         var can = document.createElement("canvas"),ctx = can.getContext("2d");
@@ -157,6 +148,9 @@
            img.src = can.toDataURL('image/jpeg');
         }
     }
+
+    // 绘制海报图片
+    poster(img.src,brand,name,phone,qrcode);
 
 </script>
 </html>

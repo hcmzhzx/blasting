@@ -63,21 +63,12 @@
 	<div class="flex center once">
 		<a href="javascript:;" class="flex center">立即开通</a>
 	</div>
-	<!--弹框-->
-	<div class="alert buy-hint">
+	<!--支付类型选择-->
+	<div class="alert">
 		<div class="mask"></div>
-		<div class='content'>
-			<h3 class="flex center">购买成功</h3>
-			<div class="img">
-				<img src="../image/dredge_bj.png" class="fitimg">
-			</div>
-			<div class="flex center indate">
-				<div>有效期至：</div>
-				<span>2017-09-15 10:42:20</span>
-			</div>
-			<div class="button">
-				<a href="javascript:;" class="flex center">去看看谁查看了我的头条</a>
-			</div>
+		<div class="content payment">
+			<a href="javascript:;" class="flex center list wx">微信支付</a>
+			<a href="zfb_hint.html" class="flex center list zfb">支付宝支付</a>
 		</div>
 	</div>
 </div>
@@ -85,6 +76,32 @@
 <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
 <script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
 <script type="text/javascript">
+    //禁止用户放大字体
+    (function () {
+        if (typeof WeixinJSBridge == "object" && typeof WeixinJSBridge.invoke == "function") {
+            handleFontSize();
+        } else {
+            if (document.addEventListener) {
+                document.addEventListener("WeixinJSBridgeReady", handleFontSize, false);
+            } else if (document.attachEvent) {
+                document.attachEvent("WeixinJSBridgeReady", handleFontSize);
+                document.attachEvent("onWeixinJSBridgeReady", handleFontSize);
+            }
+        }
+        function handleFontSize() {
+            /*设置网页字体为默认大小*/
+            WeixinJSBridge.invoke('setFontSizeCallback', {
+                'fontSize': 0
+            });
+            /*重写设置网页字体大小的事件*/
+            WeixinJSBridge.on('menu:setfont', function () {
+                WeixinJSBridge.invoke('setFontSizeCallback', {
+                    'fontSize': 0
+                });
+            });
+        }
+    })();
+
 	// 当前时间
     Date.prototype.format = function (format) {
         var args = {
@@ -109,12 +126,45 @@
 
     // 购买会员
     $("a.discounts").click(function () {
+        $(".alert").show().find(".payment").addClass("status");
+        $(".mask").click(function () {
+            $(".alert").hide().find(".payment").removeClass("status");
+        });
+    });
+
+    // 购买会员成功弹框
+    $(".payment a.list").click(function () {
+        //显示成功弹窗前先隐藏掉支付选择
+        $(".alert").hide().find(".payment").removeClass("status");
+        if($(this).hasClass("wx")){
+            console.log('wx');
+        } else {
+            console.log('zfb');
+        }
+        let box = `<div class="alert buy-hint">
+			<div class="mask"></div>
+			<div class='content'>
+				<h3 class="flex center">购买成功</h3>
+				<div class="img">
+					<img src="../image/dredge_bj.png" class="fitimg">
+				</div>
+				<div class="flex center indate">
+					<div>有效期至：</div>
+					<span>2017-09-15 10:42:20</span>
+				</div>
+				<div class="button">
+					<a href="javascript:;" class="flex center">去看看谁查看了我的头条</a>
+				</div>
+			</div>
+		</div>`;
+        $("#open").append(box);
         $(".buy-hint").show().find(".content").addClass('trans');
         $('.indate span').text(new Date().format("yyyy-MM-dd hh:mm:ss"));
+        $(".mask").click(function () {
+            $(".buy-hint").remove();
+        });
     });
-    $(".mask").click(function () {
-        $(".buy-hint").hide();
-    });
+
     // 点击回到底部
     window.onload = function () {
         var h = $(".bjimg").height() - $(document).height() + $(".state").innerHeight(), opbox = $('.optionbox').height(), boxh;

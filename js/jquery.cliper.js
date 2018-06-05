@@ -276,9 +276,7 @@
                 curImgWidth, // 移动层的当前宽度
                 curImgHeight; // 移动层的当前高度
 
-
-            if (newAngle == 90 || newAngle == -270)
-            {
+            if (newAngle == 90 || newAngle == -270) {
                 offsetX = originX + originY;
                 offsetY = originY - originX;
 
@@ -292,9 +290,7 @@
 
                 curImgWidth = imgHeight;
                 curImgHeight = imgWidth;
-            }
-            else if (newAngle == 180 || newAngle == -180)
-            {
+            } else if (newAngle == 180 || newAngle == -180) {
                 offsetX = originX * 2;
                 offsetY = originY * 2;
 
@@ -308,9 +304,7 @@
 
                 curImgWidth = imgWidth;
                 curImgHeight = imgHeight;
-            }
-            else if (newAngle == 270 || newAngle == -90)
-            {
+            } else if (newAngle == 270 || newAngle == -90) {
                 offsetX = originX - originY;
                 offsetY = originX + originY;
 
@@ -324,9 +318,7 @@
 
                 curImgWidth = imgHeight;
                 curImgHeight = imgWidth;
-            }
-            else if (newAngle == 0 || newAngle == 360 || newAngle == -360)
-            {
+            } else if (newAngle == 0 || newAngle == 360 || newAngle == -360) {
                 offsetX = 0;
                 offsetY = 0;
 
@@ -362,7 +354,7 @@
             setTransform($rotateLayer, curX, curY, curAngle, originX, originY);
 
             // 开始旋转
-            setTransition($rotateLayer, curX, curY, newAngle, 200, function() {
+            /*setTransition($rotateLayer, curX, curY, newAngle, 200, function() {
                 atRotation = false;
                 curAngle = newAngle % 360;
                 // 旋转完成后将参考点设回零位
@@ -385,7 +377,7 @@
                 }
 
                 refreshScroll(curImgWidth, curImgHeight);
-            });
+            });*/
         }
 
         function initClip() {
@@ -427,7 +419,6 @@
             clipFinish.call($img[0], dataURL);
             $('.lazy_cover,.lazy_tip').hide();
         }
-
 
         function resize() {
             hideAction($container, function() {

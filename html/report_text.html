@@ -10,54 +10,73 @@
     <link rel="stylesheet" href="../css/index.css">
 </head>
 <body id="text" class="flexv warp">
-<div class="report-text-area">
-    <div class="text-input-wrap">
-        <textarea name="" id="tip_content" class="text-input" cols="30" rows="10" maxlength="150" placeholder="请详细描述您的问题（选填）"></textarea>
-        <div class="text-num-tip">
-            <span class="now-num">0</span>/<span class="max-num">150</span>
+    <div class="report-text-area">
+        <div class="text-input-wrap">
+            <textarea name="" id="tip_content" class="text-input" cols="30" rows="10" maxlength="150" placeholder="推荐文章时请填写推荐的文章链接，文章添加后会通知您"></textarea>
+            <div class="text-num-tip">
+                <span class="now-num">0</span>/<span class="max-num">150</span>
+            </div>
         </div>
+        <button type="button" id="button-alt">提交</button>
     </div>
-    <button type="button" id="button-alt">提交</button>
-</div>
 </body>
 <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
 <script type="text/javascript">
+$(function () {
     //字数统计
     var $textInput = $('.text-input');
     var $nowNumSpan = $('.now-num');
     var timer = null;
     var beforeLen = 0;
-    $textInput.on('focus', function(e) {
-        timer = window.setInterval(function() {
+    $textInput.on('focus', function (e) {
+        timer = window.setInterval(function () {
             var text = $textInput.val();
             var nowLen = text.length;
-            if(nowLen !== beforeLen) {
+            if (nowLen !== beforeLen) {
                 beforeLen = nowLen;
                 $nowNumSpan.text(nowLen)
             }
         }, 200)
-    }).on('blur', function() {
+    }).on('blur', function () {
         timer && window.clearInterval(timer);
     });
 
-    //提交
-    $("#button-alt").on("click", function() {
-        var areatext = $("#tip_content").val();
-        var $msgShow = $('<p class="tip-msg save-ok-msg"></p>');
-        if(areatext == "") {
-            $('body').append($msgShow);
-            $(".tip-msg").text("请输入反馈信息");
+    //提交反馈
+    let vip = false;
+    $("#button-alt").on("click", function () {
+        if (vip) {
+            var areatext = $("#tip_content").val();
+            var $msgShow = $('<p class="tip-msg save-ok-msg"></p>');
+            if (areatext == "") {
+                $('body').append($msgShow);
+                $(".tip-msg").text("请输入反馈信息");
+            } else {
+                $('body').append($msgShow);
+                $(".tip-msg").text("提交成功，谢谢你的反馈");
+            }
         } else {
-            $('body').append($msgShow);
-            $(".tip-msg").text("提交成功，谢谢你的反馈");
+            let noVip = `<div class="alert">
+                <div class="mask"></div>
+                <div class="no-vip">
+                    <i class="close"></i>
+                    <div class="bj"><img src="../image/recommend.png" class="fitimg"></div>
+                    <a href="open_member.html" class="flex btn"><i class="flex center open_btn">成为VIP会员</i></a>
+                </div>
+            </div>`;
+            $("#text").append(noVip);$(".alert").show();
+            $(".no-vip .close").click(function () {
+                $(".alert").remove();
+            });
         }
     });
-    
-    timer = setInterval(function() {
+
+    timer = setInterval(function () {
         /** 定时器执行的任务 **/
-        if(!$(".tip-msg").is(":hidden")) {
+        if (!$(".tip-msg").is(":hidden")) {
             $(".tip-msg").remove();
         }
-    }, 3000);
+    }, 1500);
+
+})
 </script>
 </html>

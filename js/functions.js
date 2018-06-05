@@ -30,7 +30,7 @@ function showMsg(msg, state, dom, timeout) {
     var icon = '', bgColor = '', pos = dom == 'body' ? 'fixed' : 'absolute';
     if (state == 0) {
         bgColor = 'background:rgba(255,0,0,0.6)';
-        icon = '<span style="position:absolute;top:19px;left:6px;right:6px;height:2px;background:#fff;transform:rotate(45deg);"></span><span style="position:absolute;top:19px;left:6px;right:6px;height:2px;background:#fff;transform:rotate(-45deg);"></span>';
+        icon = '<span style="position:absolute;top:16px;left:6px;right:6px;height:2px;background:#fff;transform:rotate(45deg);"></span><span style="position:absolute;top:16px;left:6px;right:6px;height:2px;background:#fff;transform:rotate(-45deg);"></span>';
     } else {
         bgColor = 'background:rgba(0,0,0,0.6)';
         icon = '<span style="position:absolute;top:18px;left:10px;width:24px;height:2px;background:#fff;transform:rotate(-45deg);"></span><span style="position:absolute;top:22px;left:2px;width:14px;height:2px;background:#fff;transform:rotate(45deg);"></span>';
