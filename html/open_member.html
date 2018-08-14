@@ -4,146 +4,128 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
 	<meta name="format-detection" content="telephone=no">
-	<title>开通谁查看我功能</title>
+	<title>开通会员</title>
 	<link rel="stylesheet" href="http://xhh.wasd1.cn/static/css/base.css">
 	<link rel="stylesheet" href="../css/icon.css">
 	<link rel="stylesheet" href="../css/index.css">
 </head>
 <body>
 <div id="open" class="flexv wrap">
-	<div class="flexitemv mainbox">
-		<div class="state">状态：<span>未开通</span></div>
-		<div class="bjimg">
-			<img src="../image/dredge1.jpg" class="fitimg">
-			<img src="../image/dredge2.jpg" class="fitimg">
-			<img src="../image/dredge3.jpg" class="fitimg">
-            <div class="flex center optionbox">
-                <div class="flex center option">
-                    <div class="flexv discount">
-                        <div class="between list">
-                            <div class="flexv">
-                                <div class="flex centerv price">
-                                    <span class="flex">1年</span>
-                                    <em>&yen;99</em>
-                                </div>
-                                <div class="cost">
-                                    <i class="original">原价 199元</i>
-                                    <span>立省100元</span>
-                                </div>
-                            </div>
-                            <div class="flexitem endh">
-                                <a href="javascript:;" class="flex center discounts">优惠抢购</a>
-                            </div>
-                            <div class="flex center cornu">优惠</div>
-                        </div>
-                        <div class="between list">
-                            <div class="flex centerv price">
-                                <span class="flex">1个月</span>
-                                <em>&yen;39.9</em>
-                            </div>
-                            <div class="flexitem endh">
-                                <a href="javascript:;" class="flex center discounts">购买</a>
-                            </div>
-                        </div>
-						<div class="between list">
-							<div class="flex centerv price">
-								<span class="flex">2年</span>
-								<em>&yen;158</em>
-							</div>
-							<div class="flexitem endh">
-								<a href="javascript:;" class="flex center discounts">购买</a>
-							</div>
-						</div>
-                    </div>
-                </div>
+    <div class="flipbox">
+        <div class="bor">
+            <div class="flex centerv flip">
+                <i class="flex center bls bls-horn"></i>
+                <div class="flex text"> 恭喜"<span class="flexv name">小胡1</span>"成功开通会员进行获客展示</div>
             </div>
+            <div class="flex centerv flip">
+                <i class="flex center bls bls-horn"></i>
+                <div class="flex text"> 恭喜"<span class="flexv name">小胡2</span>"成功开通会员进行获客展示</div>
+            </div>
+            <div class="flex centerv flip">
+                <i class="flex center bls bls-horn"></i>
+                <div class="flex text"> 恭喜"<span class="flexv name">小胡3</span>"成功开通会员进行获客展示</div>
+            </div>
+        </div>
+    </div>
+	<form action="" class="flexitemv">
+		<div class="flexv member">
+			<div class="title">会员类型</div>
+			<div class="fwrap genrebox">
+				<div class="flexv center list" data-money="99">
+					<div class="flex center time"><span>1</span>年会员权限</div>
+					<div class="price">99/1年</div>
+					<div class="original">原价149/1年</div>
+					<div class="deduction">已抵扣<span>50元</span>现金红包</div>
+				</div>
+				<div class="flexv center list" data-money="168">
+					<div class="flex center time"><span>2</span>年会员权限</div>
+					<div class="price">168/2年</div>
+					<div class="original">原价268/2年</div>
+					<div class="deduction">已抵扣<span>100元</span>现金红包</div>
+				</div>
+				<div class="flexv center list commend current_border" data-money="299">
+					<div class="flex center time"><span>5</span>年会员权限</div>
+					<div class="price">299/5年</div>
+					<div class="original">原价499/5年</div>
+					<div class="deduction">已抵扣<span>200元</span>现金红包</div>
+					<div class="flex center surplus">还剩<span>20</span>个名额</div>
+					<div class="current"></div>
+				</div>
+			</div>
 		</div>
-	</div>
-	
-	<div class="flex center once">
-		<a href="javascript:;" class="flex center">立即开通</a>
-	</div>
-	<!--支付类型选择-->
-	<div class="alert">
-		<div class="mask"></div>
-		<div class="content payment">
-			<a href="javascript:;" class="flex center list wx">微信支付</a>
-			<a href="zfb_hint.html" class="flex center list zfb">支付宝支付</a>
+		<div class="payment">
+			<div class="title">支付方式</div>
+			<div class="around paybox">
+				<div class="flex center list current_border">
+					<i class="flex center bls bls-wx-pay" style="color:#45b638"></i>微信安全支付
+					<div class="current"></div>
+				</div>
+				<div class="flex center list">
+					<i class="flex center bls bls-zfb-pay" style="color:#1296db"></i>支付宝安全支付
+				</div>
+			</div>
 		</div>
-	</div>
+		<div class="flexitem end footer">
+			<div class="between moneybox">
+				<div class="money">应付金额：<span>¥299</span></div>
+				<a href="javascript:;" class="flex center pay_btn">立即支付</a>
+			</div>
+		</div>
+	</form>
 </div>
 </body>
-<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/jquery/3.0.0/jquery.min.js"></script>
 <script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+<script src="../js/functions.js"></script>
 <script type="text/javascript">
-    //禁止用户放大字体
-    (function () {
-        if (typeof WeixinJSBridge == "object" && typeof WeixinJSBridge.invoke == "function") {
-            handleFontSize();
-        } else {
-            if (document.addEventListener) {
-                document.addEventListener("WeixinJSBridgeReady", handleFontSize, false);
-            } else if (document.attachEvent) {
-                document.attachEvent("WeixinJSBridgeReady", handleFontSize);
-                document.attachEvent("onWeixinJSBridgeReady", handleFontSize);
-            }
-        }
-        function handleFontSize() {
-            /*设置网页字体为默认大小*/
-            WeixinJSBridge.invoke('setFontSizeCallback', {
-                'fontSize': 0
-            });
-            /*重写设置网页字体大小的事件*/
-            WeixinJSBridge.on('menu:setfont', function () {
-                WeixinJSBridge.invoke('setFontSizeCallback', {
-                    'fontSize': 0
-                });
-            });
-        }
-    })();
+window.onload=function(){
+	//禁止用户放大字体
+	(function () {
+		if (typeof WeixinJSBridge == "object" && typeof WeixinJSBridge.invoke == "function") {
+			handleFontSize();
+		} else {
+			if (document.addEventListener) {
+				document.addEventListener("WeixinJSBridgeReady", handleFontSize, false);
+			} else if (document.attachEvent) {
+				document.attachEvent("WeixinJSBridgeReady", handleFontSize);
+				document.attachEvent("onWeixinJSBridgeReady", handleFontSize);
+			}
+		}
+		function handleFontSize() {
+			/*设置网页字体为默认大小*/
+			WeixinJSBridge.invoke('setFontSizeCallback', {
+				'fontSize': 0
+			});
+			/*重写设置网页字体大小的事件*/
+			WeixinJSBridge.on('menu:setfont', function () {
+				WeixinJSBridge.invoke('setFontSizeCallback', {
+					'fontSize': 0
+				});
+			});
+		}
+	})();
 
-	// 当前时间
-    Date.prototype.format = function (format) {
-        var args = {
-            "M+": this.getMonth() + 1,
-            "d+": this.getDate(),
-            "h+": this.getHours(),
-            "m+": this.getMinutes(),
-            "s+": this.getSeconds()
-            //"q+": Math.floor((this.getMonth() + 3) / 3)
-        };
-        if (/(y+)/.test(format)){
-            format = format.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
-        };
-        for (var i in args) {
-            var n = args[i];
-            if (new RegExp("(" + i + ")").test(format)){
-                format = format.replace(RegExp.$1, RegExp.$1.length == 1 ? n : ("00" + n).substr(("" + n).length));
-            };
-        };
-        return format;
-    };
+    //滚动信息
+    setInterval(function roll() {
+        var objh = $('.flip').height();
+        $(".flipbox .bor").append($(".flipbox .bor .flip").first().height(0).animate({"height":objh+"px"},500));
+    },2000);
 
-    // 购买会员
-    $("a.discounts").click(function () {
-        $(".alert").show().find(".payment").addClass("status");
-        $(".mask").click(function () {
-            $(".alert").hide().find(".payment").removeClass("status");
-        });
+	//选择类型及支付方式
+	$('.list').click(function () {
+		if($(this).hasClass('current_border')) return;
+        $(this).siblings().removeClass('current_border').children('.current').remove();
+		$(this).addClass('current_border').append('<div class="current"></div>');
+		if($(this).attr('data-money')){
+		    $('.moneybox .money span').text('¥'+$(this).attr('data-money'));
+		}
     });
 
     // 购买会员成功弹框
-    $(".payment a.list").click(function () {
-        //显示成功弹窗前先隐藏掉支付选择
-        $(".alert").hide().find(".payment").removeClass("status");
-        if($(this).hasClass("wx")){
-            console.log('wx');
-        } else {
-            console.log('zfb');
-        }
-        let box = `<div class="alert buy-hint">
+    $("a.pay_btn").click(function () {
+        const box = `<div class="alert buy-hint">
 			<div class="mask"></div>
-			<div class='content'>
+			<div class="content">
 				<h3 class="flex center">购买成功</h3>
 				<div class="img">
 					<img src="../image/dredge_bj.png" class="fitimg">
@@ -158,28 +140,19 @@
 			</div>
 		</div>`;
         $("#open").append(box);
-        $(".buy-hint").show().find(".content").addClass('trans');
-        $('.indate span').text(new Date().format("yyyy-MM-dd hh:mm:ss"));
+        if($('.paybox .current_border i.bls').hasClass('bls-wx-pay')){
+            console.log('wx');
+            $(".buy-hint").show().find(".content").addClass('trans');
+            $('.indate span').text('2018-09-15 10:42:20');
+        }else{
+            console.log('zfb');
+            window.location.href="zfb_hint.html"
+        }
         $(".mask").click(function () {
             $(".buy-hint").remove();
         });
     });
 
-    // 点击回到底部
-    window.onload = function () {
-        var h = $(".bjimg").height() - $(document).height() + $(".state").innerHeight(), opbox = $('.optionbox').height(), boxh;
-        $(".once a").click(function () {
-            $(".mainbox").animate({scrollTop: h}, 200);
-        });
-        // 手动滚动显/隐开通按钮
-        $('.mainbox').scroll(function () {
-            boxh = $(".mainbox").scrollTop();
-            if (boxh >= h - opbox) {
-                $(".once").hide();
-            } else {
-                $(".once").show();
-            }
-        });
-    }
+}
 </script>
 </html>

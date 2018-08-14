@@ -76,10 +76,14 @@
 				<i class="flex center bls bls-generalize" style="background:#35f921;"></i>
 				<span class="flex center text">推广中心</span>
 			</a>
-            <a href="generalize.html" class="flexitem centerv tg">
+            <a href="generalize.html" class="flexitem centerv ly">
                 <i class="flex center bls bls-consult" style="background:#ffc0cb"></i>
                 <span class="flex center text">留言管理</span>
             </a>
+			<a href="systemSet.html" class="flexitem centerv xt">
+				<i class="flex center bls bls-system" style="background:#ba87ba"></i>
+				<span class="flex center text">系统设置</span>
+			</a>
 			<!--<a hropen_member.htmlhtml" class="flexitem centerv kt">
 				<i class="flex center bls bls-ck" style="background:#f68f66; "></i>
 				<span class="flex center text">开通谁查看我的功能</span>
@@ -130,10 +134,14 @@
     // 插入完善信息页
     InfoBrand("#focus",true,true);
 
-    //滚动广告
-    setInterval(function roll() {
-        var objh = $('.flip').height();
-        $(".flipbox .bor").append($(".flipbox .bor .flip").first().height(0).animate({"height":objh+"px"},500));
-    },2000);
+    //滚动信息
+    /*$(()=>{
+        $(".flipbox .bor").append($(".flipbox .bor .flip").first());
+        setInterval(()=>{
+            let objh = $('.flip').height();
+            $(".flipbox .bor").append($(".flipbox .bor .flip").first().height(0).animate({"height":objh+"px"},500));
+        },2000)
+    });*/
+
 </script>
 </html>
