@@ -6,30 +6,29 @@
  * @param val [文字填写位置]
  */
 function InfoBrand(id,Info,bra,btn,val) {
+    let button = btn || '#perfect .brands',value = val || '#perfect .cenk';
     if(Info){
-        var info = '<form id="perfect" class="alert">' +
-            '<div class="mask"></div> ' +
-            '<div class="content perfect">' +
-            '<i class="flex center bls bls-cuo cuo"></i>' +
-            '<h3 class="flex center title">您的信息不完整</h3>' +
-            '<p class="flex center tis">立刻完善资料，让客户找到您</p>' +
-            '<div class="flex center input">' +
-            '<span class="flex centerv">姓名</span>' +
-            '<input type="text" class="flexitem" placeholder="请输入姓名">' +
-            '</div>' +
-            '<div class="flex center input">' +
-            '<span class="flex centerv">手机号</span>' +
-            '<input type="tel" class="flexitem" oninput="if(value.length>11)value=value.slice(0,11)" placeholder="请输入手机号">' +
-            '</div>' +
-            '<div class="flex centerv input brands">' +
-            '<span class="flex centerv">品牌</span>' +
-            '<input class="flexitem cenk" type="text" readonly="readonly" unselectable="on" onfocus="this.blur()" placeholder="请选择品牌">' +
-            '<i class="flex smtxt"></i>' +
-            '<i class="flex center bls bls-xia brand"></i>' +
-            '</div>' +
-            '<button class="flex center button">保存修改</button>' +
-            '</div>' +
-            '</form>';
+        var info = `<form id="perfect" class="alert">
+            <div class="mask"></div>
+            <div class="content perfect trans">
+                <i class="flex center bls bls-cuo cuo"></i>
+                <h3 class="flex center title">您的信息不完整</h3>
+                <p class="flex center tis">立刻完善资料，让客户找到您</p>
+                <div class="flex center input">
+                    <span class="flex centerv">姓名</span>
+                    <input type="text" class="flexitem" placeholder="请输入姓名"></div>
+                <div class="flex center input">
+                    <span class="flex centerv">手机号</span>
+                    <input type="number" class="flexitem" oninput="if(value.length>11) value=value.slice(0,11)" placeholder="请输入手机号"></div>
+                <div class="flex centerv input brands">
+                    <span class="flex centerv">品牌</span>
+                    <input class="flexitem cenk" type="text" readonly="readonly" unselectable="on" onfocus="this.blur()" placeholder="请选择品牌">
+                    <i class="flex smtxt"></i>
+                    <i class="flex center bls bls-xia brand"></i>
+                </div>
+                <button class="flex center button">保存修改</button>
+            </div>
+        </form>`;
 
         $(id).append(info);
     }
@@ -105,10 +104,10 @@ function InfoBrand(id,Info,bra,btn,val) {
     //console.log(charTpl.join(''))
 
     //   选择
-    $(btn).click(function () {
+    $(button).click(function () {
         $("#brand-menu").addClass('show');
         $("#brand-menu ul li div").click(function () {
-            $(val).val($(this).text());
+            $(value).val($(this).text());
             $("#brand-menu").removeClass('show');
         });
         $('#brand-menu .bls-zjt').click(function () {
@@ -136,10 +135,10 @@ function pages(outerBox,innerBox){
             var loadTpl = '<div id="more" class="flex center"><i></i><span>正在加载..</span></div>';
             $(loadTpl).appendTo($(innerBox));
             setTimeout(function () {
-                //$(innerBox).append($(".reg-container>li").clone(2));
+                //$(innerBox).append(`<tr class="vip"><td>小胡</td><td>13888888888</td><td>会员</td><td>10年</td><td>18-8-14</td></tr>`);
                 $('#more').remove();
                 loadBtn = false;
-            },2000)
+            },1000)
         }
     });
 }

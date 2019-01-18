@@ -7,9 +7,11 @@
 	<title>文章</title>
 	<link rel="stylesheet" href="http://xhh.wasd1.cn/static/css/base.css">
 	<link rel="stylesheet" href="../css/icon.css">
+    <!--<link rel="stylesheet" href="../css/swiper.min.css">-->
+    <link href="https://cdn.bootcss.com/Swiper/3.4.2/css/swiper.min.css" rel="stylesheet">
 	<link rel="stylesheet" href="../css/index.css">
 </head>
-<body>
+<body style="background:#fff;">
 <div id="article" class="flexv center wrap">
 	<div class="flexitemv mainbox contents">
 		<div class="title">
@@ -63,7 +65,6 @@
 			</div>
         </div>
 
-		
 		<div class="flex center unfold">
 			<div class="flex center unfoldbox">
 				<p>展开全文</p>
@@ -81,13 +82,23 @@
 				<span>136***4613</span>
 			</div>
 			<div class="button">
-				<a href="tel:18307209731" class="flex center phone">
+				<a href="tel:18307209731" class="flex center phone" style="background:#f7403c">
 					<i class="flex center bls bls-dh"></i>
 					<span>打电话</span>
 				</a>
-				<a href="javascript:;" class="flex center book" style="background:#07BD13">
+				<a href="javascript:;" class="flex center book wechat" data-qrcode="http://yun.zhzxj.cn/default/user_qrcode_private.jpg" style="background:#07BD13">
 					<i class="flex center bls bls-weixin"></i>
 					<span>加微信</span>
+				</a>
+				<a href="javascript:;" class="flex center book youke_qr" data-qrcode="" style="background:#f0831e;background-clip:padding-box;">
+					<i class="border_grad"></i>
+					<i class="flex center bls bls-scan"></i>
+					<span>优客码</span>
+                    <div class="flex surprise">
+                        <span class="flex txt">有</span>
+                        <span class="flex txt">惊</span>
+                        <span class="flex txt">喜</span>
+                    </div>
 				</a>
 			</div>
 			<span class="row"></span>
@@ -104,6 +115,17 @@
 			<a href="javascript:;" class="flex center bls bls-kefu service"></a>
 		</div>-->
 		<!--<a href="javascript:;" class="flex center bls bls-kefu service"></a>-->
+		<!--客服按钮-->
+		<!--<a href="javascript:;" class="flex center service">
+			<div class="wrapper right">
+				<div class="circle r-circle"></div>
+			</div>
+			<div class="wrapper left">
+				<div class="circle l-circle"></div>
+			</div>
+		</a>-->
+
+
 		<div class="flexv center text-box">
 			<!--<p>马上加我微信沟通</p>-->
 			<p>本文为<span>轩轩</span>发布，不代表事业头条立场</p>
@@ -115,46 +137,117 @@
 	<div class="flex center fixed-btn">
 		<a href="javascript:;" class="flex center cut">免费换成我的名片 >></a>
 	</div>
-	
+
+    <!--底部栏立即使用-->
+    <div class="footer between">
+        <div class="flex left">
+            <div class="cover"><img src="../image/ymz.jpg" class="radimg"></div>
+            <div class="flexv center text">你的好友<br/>在用<span>事业爆文</span>邀你一起</div>
+        </div>
+        <a href="javascritp:;" class="flex center f-btn">立即使用</a>
+    </div>
+    <!--底部栏立即阅读-->
+    <!--<div class="b-article swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <div class="footer between">
+                    <div class="flex left">
+                        <div class="cover"><img src="../image/ymz.jpg" class="radimg"></div>
+                        <div class="flexv center text">我就随便说说,你不要在意这些细节问题</div>
+                    </div>
+                    <a href="javascritp:;" class="flex center f-btn">立即使用</a>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="footer between">
+                    <div class="flex left">
+                        <div class="cover"><img src="../image/ymz.jpg" class="radimg"></div>
+                        <div class="flexv center text">我就随便说说,你不要在意这些细节问题.我就随便说说,你不要在意这些细节问题</div>
+                    </div>
+                    <a href="javascritp:;" class="flex center f-btn">立即使用</a>
+                </div>
+            </div>
+        </div>
+        <div class="swiper-pagination"></div>
+    </div>-->
+
 	<!--加微信提示-->
 	<div id="wechat" class="alert">
         <div class="mask"></div>
 		<div class="content wechat">
 			<h3 class="flex center">加我免费咨询</h3>
 			<div class="qrcode">
-				<img src="http://yun.zhzxj.cn/default/user_qrcode_private.jpg" class="fitimg">
+				<img src="" class="fitimg">
 			</div>
 			<p class="flex center">长按识别二维码</p>
 		</div>
 	</div>
 </div>
 </body>
-<script src="https://cdn.bootcss.com/zepto/1.2.0/zepto.min.js"></script>
+<script src="https://cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/Swiper/3.4.2/js/swiper.min.js"></script>
 <script src="../js/brand.js"></script>
 <script type="text/javascript">
+$(function () {
     // 插入完善信息页
     InfoBrand("#article",true,true);
 
     // 测试显示
-    $(".n-btn").click(function(){
+    /*$(".n-btn").click(function(){
         $("#perfect").show().find(".content").addClass('trans');
-    });
+    });*/
 
     //  展示全部
 	$(".unfold").click(function () {
-        $(".content").removeClass('max');
-        $(this).remove();
+	   alert("您点中了")
+
+        /*$(".content").removeClass('max');
+        $(this).remove();*/
     });
 	
-    //  加微信
+    //  加微信 及 优客码
 	$(".book").click(function () {
-		$("#wechat").show().find(".content").addClass('trans');
-	});
-	$(".mask").click(function(){
-		$(".alert").hide();
-	});
+	    if($(this).attr('data-qrcode')){
+	        $("#wechat").show().find(".content").addClass('trans').find('img').attr('src',$(this).attr('data-qrcode'));
+		} else {
+	        $('#un_qrcode').remove();
+	        const unQrcode = `<div id="un_qrcode" class="alert">
+				<div class="mask"></div>
+				<div class="flexv center content un_qrcode">
+					<i class="flex center bls bls-warn"></i>
+					<p class="text">您尚未完善二维码信息!</p>
+					<a href="javascript:;" class="flex center perfect">去完善</a>
+				</div>
+			</div>`;
+            $('#article').append(unQrcode);
+            $("#un_qrcode").show().find(".content").addClass('trans');
+        }
+    });
+
+	$('#article').on('click','.mask',function () {
+        $(".alert").hide();
+    })
+
+	$(function () {
+        // 边框霓虹灯
+        let i=0, color = ['#ff00fc,#59005f','#750095,#3400ef','#78005b,#d700fc'];
+        setInterval(()=>{
+            if(i>color.length-1){i=0;}
+            $('.border_grad').css({'background':`linear-gradient(45deg,${color[i]})`});
+            i += 1;
+        },100);
+        // 文字跳动
+        let index = 0,h = 0;
+        setInterval(()=>{
+            if(h > 3){h=0};
+            if(index > $(".surprise span.txt").size()){index=0}
+            $(".surprise span.txt").eq(index).css({bottom:`${h}px`});
+            h+=0.1;
+            index+=1;
+        },30);
+    });
 	
-//	停留时间
+    //	停留时间
 	window.onload=function () {
         var time=0;
         setInterval(function () {
@@ -164,8 +257,16 @@
 			// alert('停留时间'+time+'秒');
         };
     };
+
+	//文章底部消息轮播
+    new Swiper ('.b-article', {
+        loop: true,
+        autoplay:2000,
+        pagination: '.swiper-pagination',
+        autoplayDisableOnInteraction:false
+    });
 	
-//   上传二维码
+    // 上传二维码
 	/*$("#put").change(function (event) {
 		var file = event.target.files[0];
 		if(file){
@@ -177,7 +278,6 @@
 			reader.readAsDataURL(file);
 		}
 	});*/
-	
-	
+})
 </script>
 </html>

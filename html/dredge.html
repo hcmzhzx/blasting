@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+	<meta name="format-detection" content="telephone=no">
+	<title>开通谁查看我功能</title>
+	<link rel="stylesheet" href="http://xhh.wasd1.cn/static/css/base.css">
+	<link rel="stylesheet" href="../css/icon.css">
+	<link rel="stylesheet" href="../css/index.css">
+</head>
+<body>
+<div id="open" class="flexv wrap">
+	<div class="flexitemv mainbox" style="background: #f7403c;">
+		<div class="state">状态：<span>未开通</span></div>
+		<div class="bjimg">
+			<div class="userimg">
+				<img src="../image/banner.jpg" class="fitimg">
+			</div>
+			<div class="option">
+				<div class="discount">
+					<div class="flex sale">
+						<div class="flexv">
+							<div class="price">
+								<span>12个月</span>
+								<em>&yen; 99</em>
+							</div>
+							<div class="cost">
+								<i class="original">原价 199元</i>
+								<span>立省100元</span>
+							</div>
+							<div class="flex center cornu">优惠</div>
+						</div>
+						<div class="flexitem endh ">
+							<a href="javascript:;" class="flex center discounts">优惠抢购</a>
+						</div>
+					</div>
+					<div class="flex month">
+						<div class="flexv center price">
+							<span>1个月</span>
+							<em>&yen; 19.9</em>
+						</div>
+						<div class="flexitem endh">
+							<a href="javascript:;" class="flex center discounts">购买</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="flex center once">
+		<a href="javascript:;" class="flex center">立即开通</a>
+	</div>
+	
+	<!--弹框-->
+	<div class="flex center hint">
+		<div class="mask"></div>
+		<div class='content'>
+			<h3 class="flex center">购买成功</h3>
+			<div class="img">
+				<img src="../image/dredge_bj.png" class="fitimg">
+			</div>
+			<div class="flex center indate">
+				<div>有效期至：</div>
+				<span>2017-09-15 10:42:20</span>
+			</div>
+			<div class="button">
+				<a href="javascript:;" class="flex center">去看看谁查看了我的头条</a>
+			</div>
+		</div>
+	</div>
+	<!--提示-->
+	<form class="flex center alert">
+		<div class="mask"></div>
+		<div class='content'>
+			<i class="flex center bls bls-cuo cuo"></i>
+			<h3 class="flex center title">您的信息不完整</h3>
+			<p class="flex center tis">立刻完善资料，让客户找到您</p>
+			<div class="flex center input">
+				<span class="flex centerv">姓名</span>
+				<input type="text" class="flexitem" placeholder="轩轩">
+			</div>
+			<div class="flex center input">
+				<span class="flex centerv">手机号</span>
+				<input type="text" class="flexitem" placeholder="138****3561">
+			</div>
+			<div class="flex centerv input brands">
+				<span class="flex centerv">品牌</span>
+				<input type="text" readonly="readonly" class="flexitem cenk" placeholder="安发国际">
+				<i class="flex smtxt"></i>
+				<i class="flex center bls bls-xia brand"></i>
+			</div>
+			<a href="javascript:;" class="flex center button">保存修改</a>
+		</div>
+	</form>
+	<!--品牌-->
+	<div id="brand" class="flexv dialog_box">
+		<ul class="flexitemv mainbox company" style="padding-top: 20px">
+		
+		</ul>
+		<ul class="lettrt">
+			<li><a href="#">#</a></li>
+			<li><a href="#A">A</a></li>
+			<li><a href="#B">B</a></li>
+			<li><a href="#C">C</a></li>
+			<li><a href="#D">D</a></li>
+			<li><a href="#E">E</a></li>
+			<li><a href="#F">F</a></li>
+			<li><a href="#G">G</a></li>
+			<li><a href="#H">H</a></li>
+			<li><a href="#I">I</a></li>
+			<li><a href="#J">J</a></li>
+			<li><a href="#K">K</a></li>
+			<li><a href="#L">L</a></li>
+			<li><a href="#M">M</a></li>
+			<li><a href="#N">N</a></li>
+			<li><a href="#O">O</a></li>
+			<li><a href="#P">P</a></li>
+			<li><a href="#Q">Q</a></li>
+			<li><a href="#R">R</a></li>
+			<li><a href="#S">S</a></li>
+			<li><a href="#T">T</a></li>
+			<li><a href="#U">U</a></li>
+			<li><a href="#V">V</a></li>
+			<li><a href="#W">W</a></li>
+			<li><a href="#X">X</a></li>
+			<li><a href="#Y">Y</a></li>
+			<li><a href="#Z">Z</a></li>
+		</ul>
+	</div>
+
+</div>
+</body>
+<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+<script src="../js/brand.js"></script>
+<script type="text/javascript">
+    $(".option a").click(function () {
+        $(".hint").css({"display": "block"});
+        $(".hint").find(".content").addClass('trans');
+    });
+    $(".mask").click(function () {
+        $(".hint").css({"display": "none"});
+    });
+
+//  点击回到底部
+    var h = $(".bjimg").height()-$(document).height()+$(".state").innerHeight(),boxh;
+    $(".once a").click(function () {
+		$(".mainbox").animate({ scrollTop: h }, 200);
+	});
+	$(".mainbox").scroll(function () {
+        boxh =  $(".mainbox").scrollTop();
+        if(boxh >= h-20){
+            $(".once").hide();
+        }else{
+            $(".once").show();
+		}
+    })
+	
+    
+</script>
+</html>

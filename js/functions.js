@@ -213,17 +213,26 @@ function deleteCookie(name) {
  * @param interval 间隔时间
  * @param cls 移除元素设置的class
  */
-function smsTimer(obj, html, interval, cls) {
-    obj.html(html + '(' + interval + ')');
-    interval--;
-    var time = setInterval(function () {
-        if (interval == 0) {
-            obj.attr('style', '').removeClass(cls).text(html);
+function smsTimer(obj, html, cls, interval) {
+   interval = interval || sessionStorage.getItem('Tcode');
+   if(!interval || interval <= 1){
+      sessionStorage.removeItem('Tcode');
+      return false
+   } else {
+      obj.addClass(cls);
+      obj.html(`${html}(${interval}s)`);
+      interval--;
+      let time = setInterval(()=>{
+         if (interval <= 0) {
+            obj.removeClass(cls).text(html);
             clearInterval(time);
-        } else {
-            obj.text(html + '(' + (interval--) + ')');
-        }
-    }, 1000);
+            sessionStorage.removeItem('Tcode');
+         } else {
+            obj.text(`${html}(${interval--}s)`);
+            sessionStorage.setItem('Tcode', interval);  // 存储验证码时间
+         }
+      }, 1000)
+   }
 }
 /**
  * 获取链接的host
@@ -258,11 +267,51 @@ function searchToJson(paramstr, url) {
     return JSON.parse('{' + newarr.join(',') + '}');
 }
 /**
+ * ajax分页
+ * @param url [请求地址]
+ * @param outerBox [外部容器]
+ * @param innerBox [列表容器]
+ */
+function ajaxPages(url,outerBox,innerBox,listBox,loader){
+    if(url == '' || $(outerBox).size() == 0 || $(innerBox).size() == 0) return false;
+    var ih = $(outerBox).height(),lh = $(innerBox).height();
+    var listBox = listBox || innerBox;
+    if(lh > ih){
+        var loadBtn = false,page = 1,canload = true;
+        $(outerBox).on('scroll',function (){
+            if(!canload || lh < ih) return;
+            var h = $(this).scrollTop();
+            if(lh - Math.ceil(ih + h) <= 1){
+                if(loadBtn) return;
+                loadBtn = true;
+                page++;
+                var st = $(outerBox).scrollTop();
+                var loadTpl = '<div id="more" class="flex center"><i></i><span>正在加载..</span></div>';
+                $(loadTpl).appendTo($(loader || listBox));
+                $(outerBox).scrollTop(st);
+                var post = searchToJson('page=' + page);
+                $.post(url,post,function (ret){
+                    if(ret.status == 1){
+                        $(listBox).append(ret.info);
+                        $('#more').remove();
+                        lh = $(innerBox).height();
+                    }else{
+                        canload = false;
+                        $('#more').html('<span>' + ret.info + '</span>');
+                    }
+                    $(outerBox).scrollTop(st);
+                    loadBtn = false;
+                },'json');
+            }
+        });
+    }
+}
+/**
  * 节流函数 返回函数连续调用时
  * @param method {function}  请求关联函数，实际应用需要调用的函数
  * @param duration  {number} 延迟时间，单位毫秒
  */
-const _throttle = (method, duration) => {
+function _throttle(method, duration){
     var begin = new Date();
     return function () {
         var current = new Date();
